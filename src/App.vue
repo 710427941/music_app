@@ -1,23 +1,21 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <base-header></base-header>
+    <base-tabs></base-tabs>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 
 <script>
+import BaseHeader from 'components/header/BaseHeader'
+import BaseTabs from 'components/tab/BaseTabs'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    BaseHeader, BaseTabs
+  }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
